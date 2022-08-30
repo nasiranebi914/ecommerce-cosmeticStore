@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  font-family: 'Italiana',-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #EAE5D6;
+}
+
+code {
+  font-family: 'Italiana',source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
