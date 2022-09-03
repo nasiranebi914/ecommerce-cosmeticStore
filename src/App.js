@@ -19,10 +19,10 @@ function App() {
           className="navbar"
           role="nevigation"
           aria-label="main navigation"
-          style={{ "background-color": "#EAE5D6" }}
+          style={{ backgroundColor: "#EAE5D6" }}
         >
           <div className="navbar-brand mr-6 ml-6">
-            <a class="navbar-item" href="/Home">
+            <a className="navbar-item" href="/Home">
               <h1>.LOGO</h1>
             </a>
             <a

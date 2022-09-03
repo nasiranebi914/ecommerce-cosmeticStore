@@ -1,5 +1,6 @@
 import React from "react";
 import homepage_img from "./imgs/homepage_img.jpg";
+import homepage_img2 from "./imgs/homepage_img2.jpg";
 function Home() {
   return (
     <div>
@@ -12,11 +13,11 @@ function Home() {
                   className="mb-5"
                   style={{
                     color: "#B83022",
-                    "font-family": "Italiana",
-                    "font-style": "normal",
-                    "font-weight": "400",
-                    "font-size": "100px",
-                    "line-height": "90px",
+                    fontFamily: "Italiana",
+                    fontStyle: "normal",
+                    fontWeight: "400",
+                    fontSize: "100px",
+                    lineHeight: "90px",
                   }}
                 >
                   LEFORA
@@ -31,6 +32,13 @@ function Home() {
             <div className="column">
               <img src={homepage_img}></img>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="columns">
+        <div className="columns is-mobile">
+          <div className="column">
+            <img src={homepage_img2} width={"684px"}></img>
           </div>
         </div>
       </div>
