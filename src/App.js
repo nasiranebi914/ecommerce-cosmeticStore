@@ -1,14 +1,21 @@
 import React from "react";
-import ShopAll from "./ShopAll";
+import Shop from "./Shop";
 import Eyes from "./Eyes";
 import Lips from "./Lips";
 import Face from "./Face";
+import Cheeks from "./Cheeks";
+import Brushes from "./Brushes";
+import Nail from "./Nail";
+import Paletts from "./Paletts";
+import Vegan from "./Vegan";
 import Home from "./Home";
+import ProductDetail from "./ProductDetail";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
+  Outlet,
 } from "react-router-dom";
 
 function App() {
@@ -42,30 +49,9 @@ function App() {
               <a
                 className="navbar-item mr-5 ml-5"
                 style={{ color: "#9A0000" }}
-                href="/ShopAll"
+                href="/Shop"
               >
-                Shop All
-              </a>
-              <a
-                className="navbar-item mr-5 ml-5"
-                style={{ color: "#9A0000" }}
-                href="/Face"
-              >
-                Face
-              </a>
-              <a
-                className="navbar-item mr-5 ml-5"
-                style={{ color: "#9A0000" }}
-                href="/Eyes"
-              >
-                Eyes
-              </a>
-              <a
-                className="navbar-item mr-5 ml-5"
-                style={{ color: "#9A0000" }}
-                href="/Lips"
-              >
-                Lips
+                Shop
               </a>
             </div>
             <div className="navbar-end ml-5">
@@ -78,10 +64,18 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Navigate to="/Home" />} />
           <Route path="Home" element={<Home />} />
-          <Route path="/ShopAll" element={<ShopAll />} />
-          <Route path="/Face" element={<Face />} />
-          <Route path="/Eyes" element={<Eyes />} />
-          <Route path="/Lips" element={<Lips />} />
+          <Route path="/Shop" element={<Shop />}>
+            <Route path="/Shop/Face" element={<Face />} />
+            <Route path="/Shop/Eyes" element={<Eyes />} />
+            <Route path="/Shop/Lips" element={<Lips />} />
+            <Route path="/Shop/Cheeks" element={<Cheeks />} />
+            <Route path="/Shop/Paletts" element={<Paletts />} />
+            <Route path="/Shop/Vegan" element={<Vegan />} />
+            <Route path="/Shop/Brushes" element={<Brushes />} />
+            <Route path="/Shop/Nail" element={<Nail />} />
+
+            <Route path="/Shop/Face/:productId" element={<ProductDetail />} />
+          </Route>
         </Routes>
       </Router>
     </div>

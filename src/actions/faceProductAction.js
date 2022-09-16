@@ -6,3 +6,45 @@ export const setFaceProducts = (faceProducts) => {
     payload: faceProducts,
   };
 };
+export const setLipsProducts = (lipsProducts) => {
+  return {
+    type: ActionTypes.SET_LIPS_PRODUCTS,
+    payload: lipsProducts,
+  };
+};
+export const setEyesProducts = (eyesProducts) => {
+  return {
+    type: ActionTypes.SET_EYES_PRODUCTS,
+    payload: eyesProducts,
+  };
+};
+export const setCheeksProducts = (cheeksProducts) => {
+  return {
+    type: ActionTypes.SET_CHEEKS_PRODUCTS,
+    payload: cheeksProducts,
+  };
+};
+export const setPalettsProducts = (palettsProducts) => {
+  return {
+    type: ActionTypes.SET_PALETTS_PRODUCTS,
+    payload: palettsProducts,
+  };
+};
+export const setVeganProducts = (veganProducts) => {
+  return {
+    type: ActionTypes.SET_VEGAN_PRODUCTS,
+    payload: veganProducts,
+  };
+};
+export const setBrushesProducts = (brushesProducts) => {
+  return {
+    type: ActionTypes.SET_BRUSHES_PRODUCTS,
+    payload: brushesProducts,
+  };
+};
+export const setNailProducts = (nailProducts) => {
+  return {
+    type: ActionTypes.SET_NAIL_PRODUCTS,
+    payload: nailProducts,
+  };
+};

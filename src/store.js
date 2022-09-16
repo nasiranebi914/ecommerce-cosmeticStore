@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { faceProductReducer } from "./reducers/faceProductReducer";
+import { productReducer } from "./reducers/productReducer";
 
 export default configureStore({
-  reducer: faceProductReducer,
+  reducer: productReducer,
 });
