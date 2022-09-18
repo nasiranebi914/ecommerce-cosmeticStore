@@ -3,6 +3,8 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import { setLipsProducts } from "./actions/faceProductAction";
+import Products from "./Products";
+
 function Lips() {
   const lipsProducts = useSelector((state) => state.lipsProducts);
   const dispatch = useDispatch();
@@ -26,40 +28,7 @@ function Lips() {
         console.error(error);
       });
   }, []);
-  return (
-    <div
-      className="column "
-      style={{
-        overflowY: "auto",
-        scrollbarWidth: "thin",
-        height: "600px",
-        width: "500px",
-        display: "flex",
-      }}
-    >
-      <div
-        className="grid-container"
-        style={{
-          display: "grid",
-          gridTemplateColumns: "auto auto auto  ",
-          gridGap: "10px",
-        }}
-      >
-        {lipsProducts.map((l, i) => (
-          <div className="card" key={i}>
-            <div className="card-image">
-              <figure className="image">
-                <img key={l.id} src={l.image450}></img>
-              </figure>
-            </div>
-            <div className="card-content">
-              <Link to={`/Shop/Lips/${l.id}`}>{l.displayName}</Link>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+  return <Products productType={lipsProducts} link={"/Shop/Lips/"} />;
 }
 
 export default Lips;

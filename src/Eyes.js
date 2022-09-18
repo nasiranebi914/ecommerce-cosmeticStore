@@ -3,6 +3,7 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import { setEyesProducts } from "./actions/faceProductAction";
+import Products from "./Products";
 
 function Eyes() {
   const eyesProducts = useSelector((state) => state.eyesProducts);
@@ -27,40 +28,7 @@ function Eyes() {
         console.error(error);
       });
   }, []);
-  return (
-    <div
-      className="column "
-      style={{
-        overflowY: "auto",
-        scrollbarWidth: "thin",
-        height: "600px",
-        width: "500px",
-        display: "flex",
-      }}
-    >
-      <div
-        className="grid-container"
-        style={{
-          display: "grid",
-          gridTemplateColumns: "auto auto auto  ",
-          gridGap: "10px",
-        }}
-      >
-        {eyesProducts.map((e, i) => (
-          <div className="card" key={i}>
-            <div className="card-image">
-              <figure className="image">
-                <img key={e.id} src={e.image450}></img>
-              </figure>
-            </div>
-            <div className="card-content">
-              <Link to={`/Shop/Eyes/${e.id}`}>{e.displayName}</Link>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+  return <Products productType={eyesProducts} link={"/Shop/Eyes/"} />;
 }
 
 export default Eyes;

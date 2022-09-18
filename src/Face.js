@@ -3,6 +3,7 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setFaceProducts } from "./actions/faceProductAction";
 import { BrowserRouter as Router, Link } from "react-router-dom";
+import Products from "./Products";
 
 function Face() {
   const faceProducts = useSelector((state) => state.faceProducts);
@@ -24,44 +25,11 @@ function Face() {
         dispatch(setFaceProducts(response.data.products));
       })
       .catch(function (error) {
-        console.error(error);
+        console.error(error.response.data);
       });
   }, []);
 
-  return (
-    <div
-      className="column "
-      style={{
-        overflowY: "auto",
-        scrollbarWidth: "thin",
-        height: "600px",
-        width: "500px",
-        display: "flex",
-      }}
-    >
-      <div
-        className="grid-container"
-        style={{
-          display: "grid",
-          gridTemplateColumns: "auto auto auto  ",
-          gridGap: "10px",
-        }}
-      >
-        {faceProducts.map((f, i) => (
-          <div className="card" key={i}>
-            <div className="card-image">
-              <figure className="image">
-                <img key={f.id} src={f.image450}></img>
-              </figure>
-            </div>
-            <div className="card-content">
-              <Link to={`/Shop/Face/${f.productId}`}>{f.displayName}</Link>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+  return <Products productType={faceProducts} link={"/Shop/Face/"} />;
 }
 
 export default Face;
