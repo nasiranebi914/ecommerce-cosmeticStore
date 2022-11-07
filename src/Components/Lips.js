@@ -2,7 +2,7 @@ import { React, useEffect } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter as Router, Link } from "react-router-dom";
-import { setLipsProducts } from "./actions/faceProductAction";
+import { setLipsProducts } from "../actions/faceProductAction";
 import Products from "./Products";
 
 function Lips() {

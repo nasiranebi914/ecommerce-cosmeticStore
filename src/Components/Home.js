@@ -1,6 +1,6 @@
 import React from "react";
-import homepage_img from "./imgs/homepage_img.jpg";
-import homepage_img2 from "./imgs/homepage_img2.jpg";
+import homepage_img from "../imgs/homepage_img.jpg";
+import homepage_img2 from "../imgs/homepage_img2.jpg";
 function Home() {
   return (
     <div>

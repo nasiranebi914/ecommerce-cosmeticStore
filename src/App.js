@@ -1,15 +1,16 @@
-import React from "react";
-import Shop from "./Shop";
-import Eyes from "./Eyes";
-import Lips from "./Lips";
-import Face from "./Face";
-import Cheeks from "./Cheeks";
-import Brushes from "./Brushes";
-import Nail from "./Nail";
-import Paletts from "./Paletts";
-import Vegan from "./Vegan";
-import Home from "./Home";
-import ProductDetail from "./ProductDetail";
+import React, { useState } from "react";
+import Shop from "./Components/Shop";
+import Eyes from "./Components/Eyes";
+import Lips from "./Components/Lips";
+import Face from "./Components/Face";
+import Cheeks from "./Components/Cheeks";
+import Brushes from "./Components/Brushes";
+import Nail from "./Components/Nail";
+import Paletts from "./Components/Paletts";
+import Vegan from "./Components/Vegan";
+import Home from "./Components/Home";
+import ProductDetail from "./Components/ProductDetail";
+import Cart from "./Components/Cart";
 import {
   BrowserRouter as Router,
   Routes,
@@ -54,11 +55,7 @@ function App() {
                 Shop
               </a>
             </div>
-            <div className="navbar-end ml-5">
-              <a className="navbar-item" style={{ color: "#9A0000" }}>
-                Cart
-              </a>
-            </div>
+            <Cart />
           </div>
         </nav>
         <Routes>
@@ -74,7 +71,10 @@ function App() {
             <Route path="/Shop/Brushes" element={<Brushes />} />
             <Route path="/Shop/Nail" element={<Nail />} />
 
-            <Route path="/Shop/Face/:productId" element={<ProductDetail />} />
+            <Route
+              path="/Shop/:link/:productId/:skuId"
+              element={<ProductDetail />}
+            />
           </Route>
         </Routes>
       </Router>
