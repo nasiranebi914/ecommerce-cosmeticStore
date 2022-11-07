@@ -13,7 +13,7 @@ function ProductDetail() {
     url: "https://sephora.p.rapidapi.com/products/detail",
     params: { productId: productId, preferedSku: skuId },
     headers: {
-      "X-RapidAPI-Key": "8fd1b335f9mshb0193a0e691dd61p176e40jsnf3e2c9acbe92",
+      "X-RapidAPI-Key": process.env.REACT_APP_X_RAPIDAPI_KEY,
       "X-RapidAPI-Host": "sephora.p.rapidapi.com",
     },
   };
