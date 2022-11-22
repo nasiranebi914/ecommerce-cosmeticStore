@@ -28,7 +28,7 @@ function Vegan() {
         console.error(error);
       });
   }, []);
-  return <Products productType={veganProducts} link={"/Shop/Vegan/"} />;
+  return <Products productType={veganProducts} link={"/Vegan"} />;
 }
 
 export default Vegan;

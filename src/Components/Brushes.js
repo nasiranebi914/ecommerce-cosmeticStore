@@ -28,7 +28,7 @@ function Brushes() {
         console.error(error);
       });
   }, []);
-  return <Products productType={brushesProducts} link={"/Shop/Brushes/"} />;
+  return <Products productType={brushesProducts} link={"/Brushes"} />;
 }
 
 export default Brushes;

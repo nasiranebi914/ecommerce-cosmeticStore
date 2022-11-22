@@ -6,7 +6,7 @@ function ProductDetail() {
   const params = useParams();
   const productId = params.productId;
   const skuId = params.skuId;
-  const [detail, setDetail] = useState([]);
+  const [detail, setDetail] = useState({});
 
   const options = {
     method: "GET",
@@ -22,7 +22,6 @@ function ProductDetail() {
       .request(options)
       .then(function (response) {
         setDetail(response.data);
-        console.log(detail);
       })
       .catch(function (error) {
         console.error(error);
@@ -32,6 +31,10 @@ function ProductDetail() {
   return (
     <div>
       {!detail ? " " : (detail.displayName, detail.quickLookDescription)}
+     
+      {/* {Object.entries(detail).map(([key, value], i) => {
+        return <div>{value}</div>;
+      })} */}
     </div>
   );
 }

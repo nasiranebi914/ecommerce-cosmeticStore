@@ -1,46 +1,82 @@
 import React from "react";
-import homepage_img from "../imgs/homepage_img.jpg";
-import homepage_img2 from "../imgs/homepage_img2.jpg";
+import home1 from "../imgs/home1.jpg";
+import home2 from "../imgs/home2.jpg";
+import home3 from "../imgs/home3.jpg";
+import home4 from "../imgs/home4.jpg";
+import home5 from "../imgs/home5.jpg";
+import home6 from "../imgs/home6.jpg";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 function Home() {
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
   return (
     <div>
-      <div className="columns">
-        <div className="column">
-          <div className="columns is-mobile">
-            <div className="column">
-              <div className="section is-medium has-text-left-fullhd mt-6">
-                <h1
-                  className="mb-5"
-                  style={{
-                    color: "#B83022",
-                    fontFamily: "Italiana",
-                    fontStyle: "normal",
-                    fontWeight: "400",
-                    fontSize: "100px",
-                    lineHeight: "90px",
-                  }}
-                >
-                  LEFORA
-                </h1>
-                <h2 className="is-size-6 mb-5">
-                  Choose your beauty products that suit you the best, and we
-                  will take care of the rest.
-                </h2>
-                <a href="/ShopAll">Learn More </a>
-              </div>
-            </div>
-            <div className="column">
-              <img src={homepage_img}></img>
-            </div>
+      <Carousel responsive={responsive}>
+        <div className="card m-2">
+          <div class="card-image">
+            <figure className="image">
+              <img src={home1}></img>
+            </figure>
           </div>
         </div>
-      </div>
-      <div className="columns">
-        <div className="columns is-mobile">
-          <div className="column">
-            <img src={homepage_img2} width={"684px"}></img>
+        <div className="card m-2">
+          <div class="card-image">
+            <figure className="image">
+              <img src={home2}></img>
+            </figure>
           </div>
         </div>
+        <div className="card m-2">
+          <div class="card-image">
+            <figure className="image">
+              <img src={home3}></img>
+            </figure>
+          </div>
+        </div>
+        <div className="card m-2">
+          <div class="card-image">
+            <figure className="image">
+              <img src={home4}></img>
+            </figure>
+          </div>
+        </div>
+        <div className="card m-2">
+          <div class="card-image">
+            <figure className="image">
+              <img src={home5}></img>
+            </figure>
+          </div>
+        </div>
+        <div className="card m-2">
+          <div class="card-image">
+            <figure className="image">
+              <img src={home6}></img>
+            </figure>
+          </div>
+        </div>
+      </Carousel>
+      <div className="mt-6">
+        <p>
+          Shop by<br></br> Category
+        </p>
       </div>
     </div>
   );

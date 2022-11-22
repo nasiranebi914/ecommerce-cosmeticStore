@@ -28,7 +28,7 @@ function Eyes() {
         console.error(error);
       });
   }, []);
-  return <Products productType={eyesProducts} link={"/Shop/Eyes/"} />;
+  return <Products productType={eyesProducts} link={"/Eyes"} />;
 }
 
 export default Eyes;

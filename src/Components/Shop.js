@@ -10,7 +10,7 @@ function Shop() {
             <div className="menu-list">
               <ul>
                 <li className="mb-3 ">
-                  <Link to={"/Shop/Face"}>Face</Link>
+                  <Link to={"/Face"}>Face</Link>
                 </li>
                 <li>
                   <Link to={"/Shop/Eyes"}>Eyes</Link>
@@ -37,7 +37,7 @@ function Shop() {
             </div>
           </div>
         </div>
-        <Outlet />
+        {/* <Outlet /> */}
       </div>
     </div>
   );

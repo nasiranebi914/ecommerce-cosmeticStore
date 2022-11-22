@@ -28,7 +28,7 @@ function Nail() {
         console.error(error);
       });
   }, []);
-  return <Products productType={nailProducts} link={"/Shop/Nail/"} />;
+  return <Products productType={nailProducts} link={"/Nails"} />;
 }
 
 export default Nail;

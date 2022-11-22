@@ -48,15 +48,21 @@ export const setNailProducts = (nailProducts) => {
     payload: nailProducts,
   };
 };
+export const setCartItems = (cartItems) => {
+  return {
+    type: ActionTypes.SET_CART_ITEMS,
+    payload: cartItems,
+  };
+};
 export const setCartItemsNumber = (cartItemsNumber) => {
   return {
     type: ActionTypes.SET_CART_ITEMS_NUMBERS,
     payload: cartItemsNumber,
   };
 };
-export const setCartItems = (cartItems) => {
+export const setDeleteCartItem = (deletedItem) => {
   return {
-    type: ActionTypes.SET_CART_ITEMS,
-    payload: cartItems,
+    type: ActionTypes.SET_DELETE_CART_ITEM,
+    payload: deletedItem,
   };
 };

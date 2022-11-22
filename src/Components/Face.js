@@ -24,13 +24,14 @@ function Face() {
       .then(function (response) {
         dispatch(setFaceProducts(response.data.products));
         console.log(response.data.products);
+        console.log(faceProducts);
       })
       .catch(function (error) {
         console.error(error.response.data);
       });
   }, []);
 
-  return <Products productType={faceProducts} link={"/Shop/Face/"} />;
+  return <Products productType={faceProducts} link={"/Face"} />;
 }
 
 export default Face;

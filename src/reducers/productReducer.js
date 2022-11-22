@@ -37,8 +37,34 @@ export const productReducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         cartItems: state.cartItems.concat(payload),
+        cartItemsNumber: state.cartItemsNumber + 1,
       };
 
+    case ActionTypes.SET_DELETE_CART_ITEM:
+      return {
+        ...state,
+        cartItems: state.cartItems.filter((item) => {
+          return item.displayName !== state.cartItems[payload].displayName;
+        }),
+        cartItemsNumber: state.cartItemsNumber - 1,
+      };
+    case ActionTypes.SET_CART_ITEMS_NUMBERS:
+      return { ...state };
+    case ActionTypes.SET_CART_ITEMS:
+      return {
+        ...state,
+        cartItems: state.cartItems.concat(payload),
+        cartItemsNumber: state.cartItemsNumber + 1,
+      };
+
+    case ActionTypes.SET_DELETE_CART_ITEM:
+      return {
+        ...state,
+        cartItems: state.cartItems.filter((item) => {
+          return item.displayName !== state.cartItems[payload].displayName;
+        }),
+        cartItemsNumber: state.cartItemsNumber - 1,
+      };
     default:
       return state;
   }
