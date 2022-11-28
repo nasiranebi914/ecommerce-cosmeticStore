@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Shop from "./Components/Shop";
 import Eyes from "./Components/Eyes";
 import Lips from "./Components/Lips";
 import Face from "./Components/Face";
@@ -11,99 +10,102 @@ import Vegan from "./Components/Vegan";
 import Home from "./Components/Home";
 import ProductDetail from "./Components/ProductDetail";
 import Cart from "./Components/Cart";
+import HeartItems from "./Components/HeartItems"
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
-  Outlet,
+  Link,
 } from "react-router-dom";
-
 function App() {
   return (
-    <div className="container.is-fullhd" style={{ backgroundColor: "#f7f0f7" }}>
+    <div className="container.is-fullhd" >
       <Router>
         <div
           className="is-flex is-justify-content-space-between is-align-items-center"
-          style={{ backgroundColor: "#f7dae0" }}
+          style={{ backgroundColor: "#aea49b" }}
         >
           <div>
             <a
               className="is-size-4 ml-6"
               href="/Home"
-              style={{ color: "#9A0000" }}
+              style={{ color: "#3c3b3a" }}
             >
               .L E P H O R A
             </a>
           </div>
-          <Cart />
+          <div className='is-flex'>
+            <HeartItems />
+            <Cart />
+          </div>
         </div>
         <nav
           className="navbar mb-4"
           role="nevigation"
           aria-label="main navigation"
-          style={{ backgroundColor: "#0c0503" }}
+          style={{ backgroundColor: "#22221e" }}
         >
           <div
             id="navbarBasicExample"
             className="navbar-menu is-flex is-justify-content-space-evenly"
           >
-            <a
+            <Link
               className="navbar-item mr-5 ml-5"
               style={{ color: "#EEEEEE" }}
-              href="/Face"
+              to="/Face"
             >
               Face
-            </a>
-            <a
+            </Link>
+            <Link
               className="navbar-item mr-5 ml-5"
               style={{ color: "#EEEEEE" }}
-              href="/Eyes"
+              to="/Eyes"
             >
               Eyes
-            </a>
-            <a
+            </Link>
+            <Link
               className="navbar-item mr-5 ml-5"
               style={{ color: "#EEEEEE" }}
-              href="/Lips"
+              to="/Lips"
             >
               Lips
-            </a>
-            <a
+            </Link>
+            <Link
               className="navbar-item mr-5 ml-5"
               style={{ color: "#EEEEEE" }}
-              href="/Cheeks"
+              to="/Cheeks"
             >
               Cheeks
-            </a>
-            <a
+            </Link>
+            <Link
               className="navbar-item mr-5 ml-5"
               style={{ color: "#EEEEEE" }}
-              href="/Paletts"
+              to="/Paletts"
             >
               Paletts
-            </a>
-            <a
+            </Link>
+            <Link
               className="navbar-item mr-5 ml-5"
               style={{ color: "#EEEEEE" }}
-              href="/Vegan"
+              to="/Vegan"
             >
               Vegan
-            </a>
-            <a
+            </Link>
+            <Link
               className="navbar-item mr-5 ml-5"
               style={{ color: "#EEEEEE" }}
-              href="/Brushes"
+              to="/Brushes"
             >
               Brushes
-            </a>
-            <a
+            </Link>
+            <Link
               className="navbar-item mr-5 ml-5"
               style={{ color: "#EEEEEE" }}
-              href="/Nails"
+              to="/Nails"
             >
               Nails
-            </a>
+            </Link>
           </div>
         </nav>
         <Routes>
@@ -117,14 +119,13 @@ function App() {
           <Route path="/Vegan" element={<Vegan />} />
           <Route path="/Brushes" element={<Brushes />} />
           <Route path="/Nails" element={<Nail />} />
-          {/* <Route path="/Shop" element={<Shop />}>
-            <Route
-              path="/Shop/:link/:productId/:skuId"
-              element={<ProductDetail />}
-            />
-          </Route> */}
+          <Route
+            path="/:link/:productId/:skuId"
+            element={<ProductDetail />}
+          />
         </Routes>
       </Router>
+
     </div>
   );
 }

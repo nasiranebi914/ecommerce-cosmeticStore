@@ -28,7 +28,7 @@ function Paletts() {
         console.error(error);
       });
   }, []);
-  return <Products productType={palettsProducts} link={"/Paletts"} />;
+  return <Products productType={palettsProducts} link={"/Paletts/"} />;
 }
 
 export default Paletts;

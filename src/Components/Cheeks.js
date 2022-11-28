@@ -28,7 +28,7 @@ function Cheeks() {
         console.error(error);
       });
   }, []);
-  return <Products productType={cheeksProducts} link={"/Cheeks"} />;
+  return <Products productType={cheeksProducts} link={"/Cheeks/"} />;
 }
 
 export default Cheeks;

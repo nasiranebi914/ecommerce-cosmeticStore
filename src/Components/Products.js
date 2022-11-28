@@ -1,23 +1,29 @@
 import React from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setCartItems, setCartItemsNumber } from "../actions/faceProductAction";
+import { setCartItems, setHeartItems } from "../actions/faceProductAction";
+import { RiHeartLine } from "react-icons/ri";
 
 function Products({ productType, link }) {
   const cartItems = useSelector((state) => state.cartItems);
+  const heartItems = useSelector((state) => state.heartItems);
   const cartItemsNumber = useSelector((state) => state.cartItemsNumber);
   const dispatch = useDispatch();
-  const category = link.slice("1");
+  const category = link.slice(1, -1);
 
-  console.log(productType);
   const addToCart = (e, product) => {
     dispatch(setCartItems([product]));
     console.log(cartItems, cartItemsNumber);
   };
+  const addToHeartItems = (e, product) => {
+    dispatch(setHeartItems([product]));
+    console.log(heartItems);
+  };
   return (
     <div>
+      <p className="subtitle is-2 p-6">Shop Our {category} Products</p>
       <div
-        className="section is-small is-flex-direction-column"
+        className=""
         style={{
           overflowY: "auto",
           scrollbarWidth: "thin",
@@ -25,7 +31,7 @@ function Products({ productType, link }) {
           paddingRight: "8%",
         }}
       >
-        <p className="title">Shop Our {category} Products</p>
+
         <div
           className="grid-container"
           style={{
@@ -45,19 +51,26 @@ function Products({ productType, link }) {
                 textAlign: "center",
               }}
             >
+              <a
+                className="heartItem is-size-4"
+                style={{ color: "#3c3b3a" }}
+                onClick={(e) => addToHeartItems(e.target.value, product)}
+              ><RiHeartLine />
+              </a>
               <div className="card-image" style={{ height: "80%" }}>
-                <figure className="image ">
+                <figure className="image">
                   <img key={product.id} src={product.image450}></img>
                 </figure>
               </div>
               <div className="card-content">
                 <div className="content">
-                  <Link
+                  {/* <Link
                     to={`${link}${product.productId}/${product.currentSku.skuId}`}
                     style={{ color: "#1F150A" }}
                   >
                     {product.displayName}
-                  </Link>
+                  </Link> */}
+                  {product.displayName}
                 </div>
               </div>
               <div className="ml-5" style={{ color: "#1F150A" }}>

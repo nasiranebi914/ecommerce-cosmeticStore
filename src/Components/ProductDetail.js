@@ -22,6 +22,7 @@ function ProductDetail() {
       .request(options)
       .then(function (response) {
         setDetail(response.data);
+        console.log(response.data)
       })
       .catch(function (error) {
         console.error(error);
@@ -30,11 +31,15 @@ function ProductDetail() {
 
   return (
     <div>
-      {!detail ? " " : (detail.displayName, detail.quickLookDescription)}
-     
+      {/* {!detail ? " " : (detail.currentSku.skuId)} */}
       {/* {Object.entries(detail).map(([key, value], i) => {
-        return <div>{value}</div>;
+        return <div key={i}>{key}</div>;
       })} */}
+      {Object.keys(detail).map((obj, i) => {
+        return (
+          <div>{detail[obj].brand}</div>
+        )
+      })}
     </div>
   );
 }

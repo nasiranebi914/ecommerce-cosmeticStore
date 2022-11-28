@@ -66,3 +66,15 @@ export const setDeleteCartItem = (deletedItem) => {
     payload: deletedItem,
   };
 };
+export const setHeartItems = (heartItems) => {
+  return {
+    type: ActionTypes.SET_HEART_ITEMS,
+    payload: heartItems,
+  };
+};
+export const setUnheartItem = (unheartItem) => {
+  return {
+    type: ActionTypes.SET_UNHEART_ITEM,
+    payload: unheartItem,
+  };
+};

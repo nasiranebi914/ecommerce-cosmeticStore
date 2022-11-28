@@ -11,6 +11,7 @@ const initialState = {
   nailProducts: [],
   cartItems: [],
   cartItemsNumber: 0,
+  heartItems: [],
 };
 
 export const productReducer = (state = initialState, { type, payload }) => {
@@ -39,7 +40,11 @@ export const productReducer = (state = initialState, { type, payload }) => {
         cartItems: state.cartItems.concat(payload),
         cartItemsNumber: state.cartItemsNumber + 1,
       };
-
+    case ActionTypes.SET_HEART_ITEMS:
+      return {
+        ...state,
+        heartItems: state.heartItems.concat(payload),
+      };
     case ActionTypes.SET_DELETE_CART_ITEM:
       return {
         ...state,
@@ -50,20 +55,12 @@ export const productReducer = (state = initialState, { type, payload }) => {
       };
     case ActionTypes.SET_CART_ITEMS_NUMBERS:
       return { ...state };
-    case ActionTypes.SET_CART_ITEMS:
+    case ActionTypes.SET_UNHEART_ITEM:
       return {
         ...state,
-        cartItems: state.cartItems.concat(payload),
-        cartItemsNumber: state.cartItemsNumber + 1,
-      };
-
-    case ActionTypes.SET_DELETE_CART_ITEM:
-      return {
-        ...state,
-        cartItems: state.cartItems.filter((item) => {
-          return item.displayName !== state.cartItems[payload].displayName;
+        heartItems: state.heartItems.filter((item) => {
+          return item.displayName !== state.heartItems[payload].displayName;
         }),
-        cartItemsNumber: state.cartItemsNumber - 1,
       };
     default:
       return state;

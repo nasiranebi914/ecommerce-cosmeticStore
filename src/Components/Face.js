@@ -31,7 +31,7 @@ function Face() {
       });
   }, []);
 
-  return <Products productType={faceProducts} link={"/Face"} />;
+  return <Products productType={faceProducts} link={"/Face/"} />;
 }
 
 export default Face;

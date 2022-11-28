@@ -1,0 +1,56 @@
+.cover{
+    background: url("../imgs/bk.jpg") no-repeat center;
+    background-size: cover;
+    height: 530px;
+    width: 100%;
+    display: block;
+    text-align: left;
+}
+.band{
+    background: url("../imgs/bk2.jpg") no-repeat center;
+    background-size: cover;
+    height: 370px;
+    width: 100%;
+    display: block;
+    text-align: left;
+}
+.title{
+    padding-top: 13%;
+    padding-left: 5%;
+    position: absolute;
+}
+
+.category img {
+    padding: 1%;
+    display: block;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: .1s ease;
+  background-color: #908279;
+}
+
+figure:hover .overlay {
+  opacity: 0.8;
+}
+.text{
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  font-weight: bold;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.heartItem{
+  text-align: end;
+}
+

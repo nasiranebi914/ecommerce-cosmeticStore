@@ -32,7 +32,7 @@ export default function Cart() {
       <div className="navbar-end ml-5">
         <a
           className="navbar-item mr-6"
-          style={{ color: "#9A0000" }}
+          style={{ color: "#3c3b3a" }}
           onClick={(e) => showCart(e)}
         >
           <RiShoppingBasketLine className="is-size-3" />

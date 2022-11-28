@@ -28,7 +28,7 @@ function Lips() {
         console.error(error);
       });
   }, []);
-  return <Products productType={lipsProducts} link={"/Lips"} />;
+  return <Products productType={lipsProducts} link={"/Lips/"} />;
 }
 
 export default Lips;
